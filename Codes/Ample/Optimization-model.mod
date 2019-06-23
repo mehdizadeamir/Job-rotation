@@ -39,10 +39,10 @@ subject to Minwork {i in WORKERS}:
 subject to TotalDamage {i in WORKERS, k in SOURCES}: 
 	T[i, k] = sum{j in JOBS} dpc[j, k] * X[i, j];
 
-#damage from LiFFT dataset for worker i
+#Damage from LiFFT dataset for worker i
 subject to Ydamage_l {i in WORKERS, k in SOURCES}: 
 	Y[i, 1] = a + p * (log(T[i, 1]));
-#damage from DUET dataset for worker i	
+#Damage from DUET dataset for worker i	
 subject to Ydamage_d {i in WORKERS, k in SOURCES}: 
 	Y[i, 2] = ad + pd * (log(T[i, 2]));
 
