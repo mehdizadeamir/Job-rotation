@@ -57,7 +57,7 @@ subject to TotalProb {i in WORKERS}:
 subject to maxprob {i in WORKERS}:
 	z >= Tprob[i];
 
-#Each workers works for specefic number of cycles
+#Each job has specefic number of cycles to be perfomred. 
 subject to Cycles {j in JOBS}:
 	sum {i in WORKERS} X[i, j] = num_cycles[j];
 	
